@@ -1,7 +1,8 @@
-const Todo = require('../models/Todo')
+const Todo = require('../models/Todo.models')
 
 module.exports = {
     getTodos: async (req,res)=>{
+      // Can see the user making the request
         console.log(req.user)
         try{
             const todoItems = await Todo.find({userId:req.user.id})
